@@ -10,7 +10,7 @@ import { UserService } from "../shared/user.service";
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    message = "You have successfully authenticated. This is where you build your core application functionality.";
+    message = "Je bent succesvol ingelogd.";
 
     constructor(private userService: UserService, private routerExtensions: RouterExtensions) {
     }

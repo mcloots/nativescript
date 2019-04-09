@@ -32,7 +32,7 @@ export class LoginComponent {
 
     submit() {
         if (!this.user.email || !this.user.password) {
-            this.alert("Please provide both an email address and password.");
+            this.alert("Gelieve alle velden in te vullen.");
             return;
         }
 
@@ -52,24 +52,25 @@ export class LoginComponent {
             })
             .catch(() => {
                 this.processing = false;
-                this.alert("Unfortunately we could not find your account.");
+                this.alert("Account kan niet gevonden worden.");
             });
     }
 
     register() {
         if (this.user.password != this.user.confirmPassword) {
-            this.alert("Your passwords do not match.");
+            this.alert("Wachtwoorden komen niet overeen.");
+            this.processing = false;
             return;
         }
         this.userService.register(this.user)
             .then(() => {
                 this.processing = false;
-                this.alert("Your account was successfully created.");
+                this.alert("Je account is succesvol aangemaakt");
                 this.isLoggingIn = true;
             })
             .catch(() => {
                 this.processing = false;
-                this.alert("Unfortunately we were unable to create your account.");
+                this.alert("Account kon niet worden aangemaakt.");
             });
     }
 
