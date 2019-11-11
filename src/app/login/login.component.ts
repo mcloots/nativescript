@@ -16,8 +16,8 @@ export class LoginComponent {
     isLoggingIn = true;
     user: User;
     processing = false;
-    @ViewChild("password") password: ElementRef;
-    @ViewChild("confirmPassword") confirmPassword: ElementRef;
+    @ViewChild("password", {static: false}) password: ElementRef;
+    @ViewChild("confirmPassword", {static: false}) confirmPassword: ElementRef;
 
     constructor(private page: Page, private userService: UserService, private routerExtensions: RouterExtensions) {
         this.page.actionBarHidden = true;
